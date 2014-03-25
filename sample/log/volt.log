@@ -1,0 +1,200 @@
+2014-03-19 23:14:00,706   INFO  [main] COMPILER: [null]: Created index: SYS_IDX_PK_CACHE_10021 on table: CACHE of type: BALANCED_TREE
+2014-03-19 23:14:00,707   INFO  [main] COMPILER: [null]: Created index: IX_CACHE_EXPIRES on table: CACHE of type: BALANCED_TREE
+2014-03-19 23:14:00,736   INFO  [main] COMPILER: [CACHE.insert]: Compiling Statement: INSERT INTO CACHE VALUES (?, ?, ?, ?, ?);
+2014-03-19 23:14:00,820   INFO  [main] COMPILER: [CACHE.select]: Compiling Statement: SELECT * FROM CACHE WHERE (KEY = ?);
+2014-03-19 23:14:00,841   INFO  [main] COMPILER: [CACHE.delete]: Compiling Statement: DELETE FROM CACHE WHERE (KEY = ?);
+2014-03-19 23:14:00,848   INFO  [main] COMPILER: [CACHE.update]: Compiling Statement: UPDATE CACHE SET KEY = ?, EXPIRES = ?, FLAGS = ?, VALUE = ?, CASVERSION = ? WHERE (KEY = ?);
+2014-03-19 23:14:00,923   INFO  [main] COMPILER: [Replace.class]: Compiling Statement: UPDATE cache SET Expires = ?, Flags = ?, Value = ?, CASVersion = CASVersion+1 WHERE Key = ?;
+2014-03-19 23:14:00,939   INFO  [main] COMPILER: [Replace.class]: Compiling Statement: DELETE FROM cache WHERE Key = ? AND Expires <= ?;
+2014-03-19 23:14:00,945   INFO  [main] COMPILER: [Replace.class]: Compiling Statement: SELECT Key FROM cache WHERE Key = ? AND Expires > ? AND CASVersion > -1;
+2014-03-19 23:14:00,957   INFO  [main] COMPILER: [Prepend.class]: Compiling Statement: UPDATE cache SET Value = ?, CASVersion = CASVersion+1 WHERE Key = ?;
+2014-03-19 23:14:00,962   INFO  [main] COMPILER: [Prepend.class]: Compiling Statement: DELETE FROM cache WHERE Key = ? AND Expires <= ?;
+2014-03-19 23:14:00,967   INFO  [main] COMPILER: [Prepend.class]: Compiling Statement: SELECT Key, Value FROM cache WHERE Key = ? AND Expires > ? AND CASVersion > -1;
+2014-03-19 23:14:00,976   INFO  [main] COMPILER: [Gets.class]: Compiling Statement: DELETE FROM cache WHERE Key = ? AND Expires <= ?;
+2014-03-19 23:14:00,986   INFO  [main] COMPILER: [Gets.class]: Compiling Statement: SELECT Key, Flags, Value, CASVersion, Expires FROM cache WHERE Key = ? AND Expires > ? AND CASVersion > -1;
+2014-03-19 23:14:00,996   INFO  [main] COMPILER: [Gets.class]: This procedure might benefit from an @ProcInfo annotation designating parameter 0 of statement 'DELETE FROM cache WHERE Key = ? AND Expires <= ?;'
+2014-03-19 23:14:00,998   INFO  [main] COMPILER: [IncrDecr.class]: Compiling Statement: UPDATE cache SET Value = ?, CASVersion = CASVersion+1 WHERE Key = ?;
+2014-03-19 23:14:01,003   INFO  [main] COMPILER: [IncrDecr.class]: Compiling Statement: DELETE FROM cache WHERE Key = ? AND Expires <= ?;
+2014-03-19 23:14:01,008   INFO  [main] COMPILER: [IncrDecr.class]: Compiling Statement: SELECT Key, Value FROM cache WHERE Key = ? AND Expires > ? AND CASVersion > -1;
+2014-03-19 23:14:01,018   INFO  [main] COMPILER: [Add.class]: Compiling Statement: DELETE FROM cache WHERE Key = ? AND Expires <= ?;
+2014-03-19 23:14:01,023   INFO  [main] COMPILER: [Add.class]: Compiling Statement: SELECT CASVersion FROM cache WHERE Key = ? AND Expires > ?;
+2014-03-19 23:14:01,028   INFO  [main] COMPILER: [Add.class]: Compiling Statement: INSERT INTO cache ( Key, Expires, Flags, Value ) VALUES( ?, ?, ?, ? );
+2014-03-19 23:14:01,035   INFO  [main] COMPILER: [FlushAll.class]: Compiling Statement: UPDATE cache SET Expires = ?, CASVersion = -1;
+2014-03-19 23:14:01,039   INFO  [main] COMPILER: [FlushAll.class]: Compiling Statement: DELETE FROM cache WHERE Expires < ?;
+2014-03-19 23:14:01,044   INFO  [main] COMPILER: [FlushAll.class]: Compiling Statement: DELETE FROM cache WHERE Key = ? AND Expires <= ?;
+2014-03-19 23:14:01,051   INFO  [main] COMPILER: [FlushAll.class]: Compiling Statement: DELETE FROM cache;
+2014-03-19 23:14:01,055   INFO  [main] COMPILER: [Get.class]: Compiling Statement: DELETE FROM cache WHERE Key = ? AND Expires <= ?;
+2014-03-19 23:14:01,061   INFO  [main] COMPILER: [Get.class]: Compiling Statement: SELECT Key, Flags, Value, CASVersion, Expires FROM cache WHERE Key = ? AND Expires > ? AND CASVersion > -1;
+2014-03-19 23:14:01,068   INFO  [main] COMPILER: [Set.class]: Compiling Statement: UPDATE cache SET Expires = ?, Flags = ?, Value = ?, CASVersion = CASVersion+1 WHERE Key = ?;
+2014-03-19 23:14:01,073   INFO  [main] COMPILER: [Set.class]: Compiling Statement: DELETE FROM cache WHERE Key = ? AND Expires <= ?;
+2014-03-19 23:14:01,077   INFO  [main] COMPILER: [Set.class]: Compiling Statement: SELECT CASVersion FROM cache WHERE Key = ? AND Expires > ?;
+2014-03-19 23:14:01,083   INFO  [main] COMPILER: [Set.class]: Compiling Statement: INSERT INTO cache ( Key, Expires, Flags, Value ) VALUES( ?, ?, ?, ? );
+2014-03-19 23:14:01,087   INFO  [main] COMPILER: [Delete.class]: Compiling Statement: UPDATE cache SET Expires = ?, CASVersion = -1 WHERE Key = ?;
+2014-03-19 23:14:01,091   INFO  [main] COMPILER: [Delete.class]: Compiling Statement: DELETE FROM cache WHERE Key = ? AND Expires <= ?;
+2014-03-19 23:14:01,094   INFO  [main] COMPILER: [Delete.class]: Compiling Statement: SELECT Key FROM cache WHERE Key = ? AND Expires > ? AND CASVersion > -1;
+2014-03-19 23:14:01,100   INFO  [main] COMPILER: [Delete.class]: Compiling Statement: DELETE FROM cache WHERE Key = ?;
+2014-03-19 23:14:01,105   INFO  [main] COMPILER: [Append.class]: Compiling Statement: UPDATE cache SET Value = ?, CASVersion = CASVersion+1 WHERE Key = ?;
+2014-03-19 23:14:01,108   INFO  [main] COMPILER: [Append.class]: Compiling Statement: DELETE FROM cache WHERE Key = ? AND Expires <= ?;
+2014-03-19 23:14:01,113   INFO  [main] COMPILER: [Append.class]: Compiling Statement: SELECT Key, Value FROM cache WHERE Key = ? AND Expires > ? AND CASVersion > -1;
+2014-03-19 23:14:01,120   INFO  [main] COMPILER: [CheckAndSet.class]: Compiling Statement: UPDATE cache SET Expires = ?, Flags = ?, Value = ?, CASVersion = CASVersion+1 WHERE Key = ? AND CASVersion = ?;
+2014-03-19 23:14:01,125   INFO  [main] COMPILER: [CheckAndSet.class]: Compiling Statement: DELETE FROM cache WHERE Key = ? AND Expires <= ?;
+2014-03-19 23:14:01,129   INFO  [main] COMPILER: [CheckAndSet.class]: Compiling Statement: SELECT CASVersion FROM cache WHERE Key = ? AND Expires > ? AND CASVersion > -1;
+2014-03-19 23:14:01,136   INFO  [main] COMPILER: [Cleanup.class]: Compiling Statement: DELETE FROM cache WHERE Expires < ?;
+2014-03-19 23:14:01,141   INFO  [main] COMPILER: [Cleanup.class]: Compiling Statement: DELETE FROM cache WHERE Key = ? AND Expires <= ?;
+2014-03-20 03:14:01,858   INFO  [main] CONSOLE: Initializing VoltDB...
+
+ _    __      ____  ____  ____ 
+| |  / /___  / / /_/ __ \/ __ )
+| | / / __ \/ / __/ / / / __  |
+| |/ / /_/ / / /_/ /_/ / /_/ / 
+|___/\____/_/\__/_____/_____/
+
+--------------------------------
+
+2014-03-20 03:14:01,878   INFO  [main] CONSOLE: Build: 4.0.2.3 voltdb-4.0.2.3-0-ge2f2df4-local Community Edition
+2014-03-20 03:14:01,890   INFO  [main] NETWORK: Default network thread count: 2
+2014-03-20 03:14:01,941   INFO  [main] HOST: Beginning inter-node communication on port 3021.
+2014-03-20 03:14:01,941   INFO  [main] HOST: Attempting to bind to leader ip localhost/127.0.0.1:3021
+2014-03-20 03:14:01,946   INFO  [main] CONSOLE: Connecting to VoltDB cluster as the leader...
+2014-03-20 03:14:02,007   INFO  [main] ZK-SERVER: binding to port /127.0.0.1:2181
+2014-03-20 03:14:02,022   INFO  [main] ZK-SERVER: Created server with tickTime 3000 minSessionTimeout 6000 maxSessionTimeout 60000
+2014-03-20 03:14:02,103   INFO  [main] ZK-SERVER: Initiating client connection, connectString=127.0.0.1:2181 sessionTimeout=2000 watcher=org.voltcore.zk.ZKUtil$1@72fb92dc
+2014-03-20 03:14:02,112   INFO  [main-SendThread()] ZK-CLIENT: Opening socket connection to server /127.0.0.1:2181
+2014-03-20 03:14:02,116   INFO  [main-SendThread(localhost.localdomain:2181)] ZK-CLIENT: Socket connection established to /127.0.0.1:2181, initiating session
+2014-03-20 03:14:02,117   INFO  [NIOServerCxn.Factory:/127.0.0.1:2181] ZK-SERVER: Accepted socket connection from /127.0.0.1:59563
+2014-03-20 03:14:02,121   INFO  [NIOServerCxn.Factory:/127.0.0.1:2181] ZK-SERVER: Client attempting to establish new session at /127.0.0.1:59563
+2014-03-20 03:14:02,145   INFO  [ZooKeeperServer] ZK-SERVER: Established session 0x16d56ab685000000 with negotiated timeout 6000 for client /127.0.0.1:59563
+2014-03-20 03:14:02,145   INFO  [main-SendThread(localhost.localdomain:2181)] ZK-CLIENT: Session establishment complete on server /127.0.0.1:2181, sessionid = 0x16d56ab685000000, negotiated timeout = 6000
+2014-03-20 03:14:02,216   INFO  [Socket Joiner] HOST: Attempting to bind to internal ip 0.0.0.0/0.0.0.0:3021
+2014-03-20 03:14:02,246   INFO  [main] HOST: Host id of this node is: 0
+2014-03-20 03:14:02,247   INFO  [main] CONSOLE: Host id of this node is: 0
+2014-03-20 03:14:02,280   INFO  [main] HOST: URL of deployment: deployment.xml
+2014-03-20 03:14:02,660   INFO  [main] HOST: Dead host timeout set to 90000 milliseconds
+2014-03-20 03:14:02,691   INFO  [main] HOST: Creating voltdbroot directory: /edisk/tools/voltdb-4.0.2.3/examples/voltcache/voltdbroot
+2014-03-20 03:14:02,691   INFO  [main] HOST: Creating snapshot directory: /edisk/tools/voltdb-4.0.2.3/examples/voltcache/voltdbroot/snapshots
+2014-03-20 03:14:02,692   INFO  [main] HOST: Creating export overflow directory: /edisk/tools/voltdb-4.0.2.3/examples/voltcache/voltdbroot/export_overflow
+2014-03-20 03:14:04,149   INFO  [main] EXPORT: System is not using any export functionality.
+2014-03-20 03:14:04,157   INFO  [main] CONSOLE: Initializing the database. This may take a moment...
+2014-03-20 03:14:04,241   INFO  [Iv2ExecutionSite: 0:0] HOST: Loading native VoltDB code (voltdb-4.0.2.3). A confirmation message will follow if the loading is successful.
+2014-03-20 03:14:04,266   INFO  [Iv2ExecutionSite: 0:0] HOST: Successfully loaded native VoltDB library voltdb-4.0.2.3.
+2014-03-20 03:14:04,347   INFO  [main] TM: Setting maximum size of MPI read pool to: 20
+2014-03-20 03:14:04,426   INFO  [Leader elector-/db/leaders/globalservice] HOST: Host 0 promoted to be the global service provider
+2014-03-20 03:14:04,462   INFO  [LeaderAppointer-Babysitters] TM: Appointing HSId 0:0 as leader for partition 0
+2014-03-20 03:14:04,483   INFO  [LeaderAppointer-Babysitters] TM: Appointing HSId 0:1 as leader for partition 1
+2014-03-20 03:14:04,496   INFO  [LeaderCache] TM: SP 0:0 for partition 0 found (including self) 1 surviving replicas to repair.  Survivors: 0:0
+2014-03-20 03:14:04,497   INFO  [LeaderCache] TM: SP 0:1 for partition 1 found (including self) 1 surviving replicas to repair.  Survivors: 0:1
+2014-03-20 03:14:04,523   INFO  [LeaderCache] TM: SP 0:0 for partition 0 finished leader promotion. Took 38 ms.
+2014-03-20 03:14:04,523   INFO  [LeaderCache] TM: SP 0:1 for partition 1 finished leader promotion. Took 29 ms.
+2014-03-20 03:14:04,536   INFO  [LeaderCache] HOST: Mailbox is not registered for site id -4
+2014-03-20 03:14:04,536   INFO  [LeaderCache] HOST: Mailbox is not registered for site id -4
+2014-03-20 03:14:04,544   INFO  [LeaderCache] TM: MP 0:2 for partition 16383 found 2 surviving leaders to repair.  Survivors: 0:0, 0:1
+2014-03-20 03:14:04,547   INFO  [LeaderCache] TM: MP 0:2 for partition 16383 finished leader promotion. Took 13 ms.
+2014-03-20 03:14:04,558   INFO  [LeaderCache] HOST: Mailbox is not registered for site id -4
+2014-03-20 03:14:04,628   INFO  [main] HOST: Database start action is Create.
+2014-03-20 03:14:04,677   INFO  [main] HOST: PID of this Volt process is 5411
+2014-03-20 03:14:04,677   INFO  [main] HOST: Listening for native wire protocol clients on port 21212.
+2014-03-20 03:14:04,677   INFO  [main] HOST: Listening for admin wire protocol clients on port 21211.
+2014-03-20 03:14:04,677   INFO  [main] HOST: Local machine HTTP monitoring is listening on port 8080.
+2014-03-20 03:14:04,677   INFO  [main] HOST: Json API over HTTP enabled at path /api/1.0/, listening on port 8080.
+2014-03-20 03:14:04,678   INFO  [main] HOST: Available JVM arguments: -Xmx2048m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp -XX:-ReduceInitialCardMarks -Dlog4j.configuration=file:///edisk/tools/voltdb-4.0.2.3/voltdb/log4j.xml -Djava.library.path=/edisk/tools/voltdb-4.0.2.3/voltdb
+2014-03-20 03:14:04,678   INFO  [main] HOST: JVM class path: /edisk/tools/voltdb-4.0.2.3/voltdb/voltdb-4.0.2.3.jar:/edisk/tools/voltdb-4.0.2.3/lib/servlet-api-2.5.jar:/edisk/tools/voltdb-4.0.2.3/lib/protobuf-java-2.4.1.jar:/edisk/tools/voltdb-4.0.2.3/lib/commons-cli-1.2.jar:/edisk/tools/voltdb-4.0.2.3/lib/commons-lang3-3.0.jar:/edisk/tools/voltdb-4.0.2.3/lib/snappy-java-1.1.0.1.jar:/edisk/tools/voltdb-4.0.2.3/lib/jetty-io-7.6.1.v20120215.jar:/edisk/tools/voltdb-4.0.2.3/lib/jline-2.10.jar:/edisk/tools/voltdb-4.0.2.3/lib/jetty-util-7.6.1.v20120215.jar:/edisk/tools/voltdb-4.0.2.3/lib/slf4j-api-1.6.2.jar:/edisk/tools/voltdb-4.0.2.3/lib/super-csv-2.1.0.jar:/edisk/tools/voltdb-4.0.2.3/lib/jsch-0.1.50.jar:/edisk/tools/voltdb-4.0.2.3/lib/jna.jar:/edisk/tools/voltdb-4.0.2.3/lib/log4j-1.2.16.jar:/edisk/tools/voltdb-4.0.2.3/lib/slf4j-nop-1.6.2.jar:/edisk/tools/voltdb-4.0.2.3/lib/tomcat-jdbc.jar:/edisk/tools/voltdb-4.0.2.3/lib/jetty-continuation-7.6.1.v20120215.jar:/edisk/tools/voltdb-4.0.2.3/lib/jetty-http-7.6.1.v20120215.jar:/edisk/tools/voltdb-4.0.2.3/lib/jetty-server-7.6.1.v20120215.jar:/edisk/tools/voltdb-4.0.2.3/lib/zmq-2.1.11.jar:/edisk/tools/voltdb-4.0.2.3/lib/tomcat-juli.jar:/edisk/tools/voltdb-4.0.2.3/lib/groovy-all-2.1.7-indy.jar
+2014-03-20 03:14:04,678   INFO  [main] HOST: Maximum usable Java heap set to 1820 mb.
+2014-03-20 03:14:04,678   INFO  [main] HOST: Minimum required Java heap for catalog and server config is 394 MB.
+2014-03-20 03:14:04,679   INFO  [main] HOST: Cluster has 1 hosts with leader hostname: "localhost". 2 sites per host. K = 0.
+2014-03-20 03:14:04,679   INFO  [main] HOST: The entire cluster has 1 copy of each of the 2 logical partitions.
+2014-03-20 03:14:04,679   INFO  [main] HOST: Detection of network partitions in the cluster is enabled.
+2014-03-20 03:14:04,679   INFO  [main] HOST: Client authentication is not enabled. Anonymous clients accepted.
+2014-03-20 03:14:04,679   INFO  [main] HOST: No schedule set for automated snapshots.
+2014-03-20 03:14:04,679   INFO  [main] HOST: Using "voltdbroot" for voltdbroot directory.
+2014-03-20 03:14:04,680   INFO  [main] HOST: CPU INFO:         6 Cores, 1 Sockets, 6 Hardware Threads
+2014-03-20 03:14:04,680   INFO  [main] HOST: CPU DESC:         AMD Phenom(tm) II X6 1055T Processor 512 KB cache
+2014-03-20 03:14:04,680   INFO  [main] HOST: HOST MEMORY (MB): 16012
+2014-03-20 03:14:04,680   INFO  [main] HOST: OS PROFILE:       Linux 3.13.4-200.fc20.x86_64 amd64 en_US
+2014-03-20 03:14:04,680   INFO  [main] HOST: JAVA VERSION:     1.7.0_51
+2014-03-20 03:14:04,680   INFO  [main] HOST: JAVA RUNTIME:     Java(TM) SE Runtime Environment (1.7.0_51-b13)
+2014-03-20 03:14:04,680   INFO  [main] HOST: JAVA VM:          Java HotSpot(TM) 64-Bit Server VM (24.51-b03, mixed mode)
+2014-03-20 03:14:04,680   INFO  [main] HOST: About to list cluster interfaces for all nodes with format [ip1 ip2 ... ipN] client-port:admin-port:http-port
+2014-03-20 03:14:04,681   INFO  [main] HOST:   Host id: 0 with interfaces: 192.168.2.4 21212,21211,8080 [SELF]
+2014-03-20 03:14:04,684   WARN  [main] CONSOLE: This is not a highly available cluster. K-Safety is set to 0.
+2014-03-20 03:14:04,684   WARN  [main] CONSOLE: Durability is turned off. Command logging is off.
+2014-03-20 03:14:04,710   INFO  [SnapshotDaemon] LOGGING: This node was selected as the leader for snapshot truncation
+2014-03-20 03:14:04,711   INFO  [Thread-8] HOST: Logging config info
+2014-03-20 03:14:04,715   INFO  [SnapshotDaemon] LOGGING: Checking for existence of snapshot truncation request
+2014-03-20 03:14:04,749   INFO  [Thread-9] CONSOLE: Server completed initialization.
+2014-03-20 03:19:29,741   INFO  [main] CONSOLE: Initializing VoltDB...
+
+ _    __      ____  ____  ____ 
+| |  / /___  / / /_/ __ \/ __ )
+| | / / __ \/ / __/ / / / __  |
+| |/ / /_/ / / /_/ /_/ / /_/ / 
+|___/\____/_/\__/_____/_____/
+
+--------------------------------
+
+2014-03-20 03:19:29,752   INFO  [main] CONSOLE: Build: 4.0.2.3 voltdb-4.0.2.3-0-ge2f2df4-local Community Edition
+2014-03-20 03:19:29,762   INFO  [main] NETWORK: Default network thread count: 2
+2014-03-20 03:19:29,802   INFO  [main] HOST: Beginning inter-node communication on port 3021.
+2014-03-20 03:19:29,802   INFO  [main] HOST: Attempting to bind to leader ip localhost/127.0.0.1:3021
+2014-03-20 03:19:29,805   INFO  [main] CONSOLE: Connecting to VoltDB cluster as the leader...
+2014-03-20 03:19:29,857   INFO  [main] ZK-SERVER: binding to port /127.0.0.1:2181
+2014-03-20 03:19:29,870   INFO  [main] ZK-SERVER: Created server with tickTime 3000 minSessionTimeout 6000 maxSessionTimeout 60000
+2014-03-20 03:19:29,938   INFO  [main] ZK-SERVER: Initiating client connection, connectString=127.0.0.1:2181 sessionTimeout=2000 watcher=org.voltcore.zk.ZKUtil$1@72fb92dc
+2014-03-20 03:19:29,947   INFO  [main-SendThread()] ZK-CLIENT: Opening socket connection to server /127.0.0.1:2181
+2014-03-20 03:19:29,951   INFO  [main-SendThread(localhost.localdomain:2181)] ZK-CLIENT: Socket connection established to /127.0.0.1:2181, initiating session
+2014-03-20 03:19:29,951   INFO  [NIOServerCxn.Factory:/127.0.0.1:2181] ZK-SERVER: Accepted socket connection from /127.0.0.1:59566
+2014-03-20 03:19:29,955   INFO  [NIOServerCxn.Factory:/127.0.0.1:2181] ZK-SERVER: Client attempting to establish new session at /127.0.0.1:59566
+2014-03-20 03:19:29,984   INFO  [ZooKeeperServer] ZK-SERVER: Established session 0x16d56d36d2000000 with negotiated timeout 6000 for client /127.0.0.1:59566
+2014-03-20 03:19:29,985   INFO  [main-SendThread(localhost.localdomain:2181)] ZK-CLIENT: Session establishment complete on server /127.0.0.1:2181, sessionid = 0x16d56d36d2000000, negotiated timeout = 6000
+2014-03-20 03:19:30,061   INFO  [Socket Joiner] HOST: Attempting to bind to internal ip 0.0.0.0/0.0.0.0:3021
+2014-03-20 03:19:30,089   INFO  [main] HOST: Host id of this node is: 0
+2014-03-20 03:19:30,090   INFO  [main] CONSOLE: Host id of this node is: 0
+2014-03-20 03:19:30,122   INFO  [main] HOST: URL of deployment: deployment.xml
+2014-03-20 03:19:30,450   INFO  [main] HOST: Dead host timeout set to 90000 milliseconds
+2014-03-20 03:19:31,873   INFO  [main] EXPORT: System is not using any export functionality.
+2014-03-20 03:19:31,880   INFO  [main] CONSOLE: Initializing the database. This may take a moment...
+2014-03-20 03:19:31,967   INFO  [Iv2ExecutionSite: 0:0] HOST: Loading native VoltDB code (voltdb-4.0.2.3). A confirmation message will follow if the loading is successful.
+2014-03-20 03:19:31,974   INFO  [Iv2ExecutionSite: 0:0] HOST: Successfully loaded native VoltDB library voltdb-4.0.2.3.
+2014-03-20 03:19:32,062   INFO  [main] TM: Setting maximum size of MPI read pool to: 20
+2014-03-20 03:19:32,130   INFO  [Leader elector-/db/leaders/globalservice] HOST: Host 0 promoted to be the global service provider
+2014-03-20 03:19:32,165   INFO  [LeaderAppointer-Babysitters] TM: Appointing HSId 0:0 as leader for partition 0
+2014-03-20 03:19:32,180   INFO  [LeaderAppointer-Babysitters] TM: Appointing HSId 0:1 as leader for partition 1
+2014-03-20 03:19:32,189   INFO  [LeaderCache] TM: SP 0:0 for partition 0 found (including self) 1 surviving replicas to repair.  Survivors: 0:0
+2014-03-20 03:19:32,190   INFO  [LeaderCache] TM: SP 0:1 for partition 1 found (including self) 1 surviving replicas to repair.  Survivors: 0:1
+2014-03-20 03:19:32,213   INFO  [LeaderCache] TM: SP 0:0 for partition 0 finished leader promotion. Took 31 ms.
+2014-03-20 03:19:32,213   INFO  [LeaderCache] TM: SP 0:1 for partition 1 finished leader promotion. Took 24 ms.
+2014-03-20 03:19:32,223   INFO  [LeaderCache] HOST: Mailbox is not registered for site id -4
+2014-03-20 03:19:32,223   INFO  [LeaderCache] HOST: Mailbox is not registered for site id -4
+2014-03-20 03:19:32,235   INFO  [LeaderCache] TM: MP 0:2 for partition 16383 found 2 surviving leaders to repair.  Survivors: 0:0, 0:1
+2014-03-20 03:19:32,240   INFO  [LeaderCache] TM: MP 0:2 for partition 16383 finished leader promotion. Took 19 ms.
+2014-03-20 03:19:32,252   INFO  [LeaderCache] HOST: Mailbox is not registered for site id -4
+2014-03-20 03:19:32,321   INFO  [main] HOST: Database start action is Create.
+2014-03-20 03:19:32,362   INFO  [main] HOST: PID of this Volt process is 5686
+2014-03-20 03:19:32,363   INFO  [main] HOST: Listening for native wire protocol clients on port 21212.
+2014-03-20 03:19:32,363   INFO  [main] HOST: Listening for admin wire protocol clients on port 21211.
+2014-03-20 03:19:32,363   INFO  [main] HOST: Local machine HTTP monitoring is listening on port 8080.
+2014-03-20 03:19:32,363   INFO  [main] HOST: Json API over HTTP enabled at path /api/1.0/, listening on port 8080.
+2014-03-20 03:19:32,363   INFO  [main] HOST: Available JVM arguments: -Xmx2048m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp -XX:-ReduceInitialCardMarks -Dlog4j.configuration=file:///edisk/tools/voltdb-4.0.2.3/voltdb/log4j.xml -Djava.library.path=/edisk/tools/voltdb-4.0.2.3/voltdb
+2014-03-20 03:19:32,363   INFO  [main] HOST: JVM class path: /edisk/tools/voltdb-4.0.2.3/voltdb/voltdb-4.0.2.3.jar:/edisk/tools/voltdb-4.0.2.3/lib/servlet-api-2.5.jar:/edisk/tools/voltdb-4.0.2.3/lib/protobuf-java-2.4.1.jar:/edisk/tools/voltdb-4.0.2.3/lib/commons-cli-1.2.jar:/edisk/tools/voltdb-4.0.2.3/lib/commons-lang3-3.0.jar:/edisk/tools/voltdb-4.0.2.3/lib/snappy-java-1.1.0.1.jar:/edisk/tools/voltdb-4.0.2.3/lib/jetty-io-7.6.1.v20120215.jar:/edisk/tools/voltdb-4.0.2.3/lib/jline-2.10.jar:/edisk/tools/voltdb-4.0.2.3/lib/jetty-util-7.6.1.v20120215.jar:/edisk/tools/voltdb-4.0.2.3/lib/slf4j-api-1.6.2.jar:/edisk/tools/voltdb-4.0.2.3/lib/super-csv-2.1.0.jar:/edisk/tools/voltdb-4.0.2.3/lib/jsch-0.1.50.jar:/edisk/tools/voltdb-4.0.2.3/lib/jna.jar:/edisk/tools/voltdb-4.0.2.3/lib/log4j-1.2.16.jar:/edisk/tools/voltdb-4.0.2.3/lib/slf4j-nop-1.6.2.jar:/edisk/tools/voltdb-4.0.2.3/lib/tomcat-jdbc.jar:/edisk/tools/voltdb-4.0.2.3/lib/jetty-continuation-7.6.1.v20120215.jar:/edisk/tools/voltdb-4.0.2.3/lib/jetty-http-7.6.1.v20120215.jar:/edisk/tools/voltdb-4.0.2.3/lib/jetty-server-7.6.1.v20120215.jar:/edisk/tools/voltdb-4.0.2.3/lib/zmq-2.1.11.jar:/edisk/tools/voltdb-4.0.2.3/lib/tomcat-juli.jar:/edisk/tools/voltdb-4.0.2.3/lib/groovy-all-2.1.7-indy.jar
+2014-03-20 03:19:32,364   INFO  [main] HOST: Maximum usable Java heap set to 1820 mb.
+2014-03-20 03:19:32,364   INFO  [main] HOST: Minimum required Java heap for catalog and server config is 394 MB.
+2014-03-20 03:19:32,364   INFO  [main] HOST: Cluster has 1 hosts with leader hostname: "localhost". 2 sites per host. K = 0.
+2014-03-20 03:19:32,364   INFO  [main] HOST: The entire cluster has 1 copy of each of the 2 logical partitions.
+2014-03-20 03:19:32,364   INFO  [main] HOST: Detection of network partitions in the cluster is enabled.
+2014-03-20 03:19:32,364   INFO  [main] HOST: Client authentication is not enabled. Anonymous clients accepted.
+2014-03-20 03:19:32,364   INFO  [main] HOST: No schedule set for automated snapshots.
+2014-03-20 03:19:32,364   INFO  [main] HOST: Using "voltdbroot" for voltdbroot directory.
+2014-03-20 03:19:32,365   INFO  [main] HOST: CPU INFO:         6 Cores, 1 Sockets, 6 Hardware Threads
+2014-03-20 03:19:32,365   INFO  [main] HOST: CPU DESC:         AMD Phenom(tm) II X6 1055T Processor 512 KB cache
+2014-03-20 03:19:32,365   INFO  [main] HOST: HOST MEMORY (MB): 16012
+2014-03-20 03:19:32,365   INFO  [main] HOST: OS PROFILE:       Linux 3.13.4-200.fc20.x86_64 amd64 en_US
+2014-03-20 03:19:32,365   INFO  [main] HOST: JAVA VERSION:     1.7.0_51
+2014-03-20 03:19:32,365   INFO  [main] HOST: JAVA RUNTIME:     Java(TM) SE Runtime Environment (1.7.0_51-b13)
+2014-03-20 03:19:32,365   INFO  [main] HOST: JAVA VM:          Java HotSpot(TM) 64-Bit Server VM (24.51-b03, mixed mode)
+2014-03-20 03:19:32,366   INFO  [main] HOST: About to list cluster interfaces for all nodes with format [ip1 ip2 ... ipN] client-port:admin-port:http-port
+2014-03-20 03:19:32,366   INFO  [main] HOST:   Host id: 0 with interfaces: 192.168.2.4 21212,21211,8080 [SELF]
+2014-03-20 03:19:32,375   WARN  [main] CONSOLE: This is not a highly available cluster. K-Safety is set to 0.
+2014-03-20 03:19:32,375   WARN  [main] CONSOLE: Durability is turned off. Command logging is off.
+2014-03-20 03:19:32,392   INFO  [SnapshotDaemon] LOGGING: This node was selected as the leader for snapshot truncation
+2014-03-20 03:19:32,393   INFO  [Thread-8] HOST: Logging config info
+2014-03-20 03:19:32,394   INFO  [SnapshotDaemon] LOGGING: Checking for existence of snapshot truncation request
+2014-03-20 03:19:32,430   INFO  [Thread-9] CONSOLE: Server completed initialization.

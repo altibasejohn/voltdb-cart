@@ -1,0 +1,8 @@
+{
+    "log4jDst": [{
+        "format": "'.'yyyy-MM-dd",
+        "path": "/home/jeffmc/code/voltdb-cart/sample/log/volt.log"
+    }],
+    "pid": 5686,
+    "workingDir": "/home/jeffmc/code/voltdb-cart/sample"
+}

@@ -1,0 +1,16 @@
+#!/bin/bash -e
+
+#
+# install the voltdb media into the openshift app
+#
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+
+client_result "installing voltdb....`date`"
+
+tar xvzf $OPENSHIFT_VOLTDB_DIR/versions/jre*.tar.gz --directory=$OPENSHIFT_VOLTDB_DIR
+mv $OPENSHIFT_VOLTDB_DIR/jre* $OPENSHIFT_VOLTDB_DIR/jre-install
+
+tar xvzf $OPENSHIFT_VOLTDB_DIR/versions/voltdb-*/LINUX* --directory=$OPENSHIFT_VOLTDB_DIR
+mv $OPENSHIFT_VOLTDB_DIR/voltdb-* $OPENSHIFT_VOLTDB_DIR/voltdb-install
+
+client_result "install complete....`date`"

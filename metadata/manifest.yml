@@ -1,0 +1,26 @@
+Name: voltdb
+Cartridge-Short-Name: VOLTDB
+Display-Name: voltdb-4.0.2.3
+Description: The VoltDB database community edition cartridge (http://voltdb.com).
+Version: "4.0.2.3"
+Website: cartridge provided by jeffmc04@gmail.com
+Cartridge-Version: 0.1.0
+Cartridge-Vendor: jeffmccormick
+Categories:
+  - service
+  - database
+  - embedded
+Provides:
+  - voltdb-4.0.2.3
+  - voltdb
+Scaling:
+  Min: 1
+  Max: -1
+Endpoints:
+  - Private-IP-Name:   HOST
+    Private-Port-Name: PORT
+    Private-Port:      8080
+    Private-Port:      21212
+    Public-Port-Name:  PORT
+
+Source-Url: https://github.com/jmccormick2001/voltdb-cart.git

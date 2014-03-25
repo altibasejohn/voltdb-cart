@@ -1,0 +1,16 @@
+#!/bin/bash -e
+
+#
+# perform some setup of the openshift env after the installation
+#
+
+set -u
+
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+
+echo ${OPENSHIFT_VOLTDB_DIR}jre-install/bin:${OPENSHIFT_VOLTDB_DIR}voltdb-install/bin > ${OPENSHIFT_VOLTDB_DIR}env/OPENSHIFT_VOLTDB_PATH_ELEMENT
+
+mkdir ${OPENSHIFT_VOLTDB_DIR}logs
+
+client_result "setup completed"
+
