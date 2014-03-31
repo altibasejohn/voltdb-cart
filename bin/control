@@ -45,6 +45,20 @@ function update() {
     ./.openshift/action_hooks/build
 }
 
+function getinternalip() {
+	cart_short_name=`primary_cartridge_short_name`
+	cart_ip_name=`primary_cartridge_private_ip_name`
+
+    internaladdress="OPENSHIFT_"$cart_short_name"_"$cart_ip_name
+    internaladdressip=${!internaladdress}
+
+    echo $internaladdress
+    echo ${!internaladdress}
+
+    client_result "$internaladdress $internaladdressip"
+
+}
+
 function start() {
 
      client_result "starting voltdb...."
@@ -53,22 +67,24 @@ function start() {
         if [ "$?" -eq "0" ]; then
                 client_result "voltdb is running already...run stop first";
         else
-                client_result "voltdb is not running...starting it now"
-                export HOME=${HOME}/app-root/data
-                nohup voltdb create --internal 16700 --externalinterface $OPENSHIFT_DIY_IP --zookeeper 16300 --httphost $OPENSHIFT_DIY_IP -d $OPENSHIFT_VOLTDB_DIR/sample/deployment.xml  --zkhost $OPENSHIFT_DIY_IP -H $OPENSHIFT_DIY_IP --internalinterface $OPENSHIFT_DIY_IP $OPENSHIFT_VOLTDB_DIR/sample/voltcache.jar > $OPENSHIFT_VOLTDB_DIR/logs/startup.log &
+			getinternalip
+			client_result "voltdb is not running...starting it now"
+            export HOME=${HOME}/app-root/data
+            nohup voltdb create --internal 16700 --externalinterface $internaladdressip --zookeeper 16300 --httphost $internaladdressip -d $OPENSHIFT_VOLTDB_DIR/sample/deployment.xml  --zkhost $internaladdressip -H $internaladdressip --internalinterface $internaladdressip $OPENSHIFT_VOLTDB_DIR/sample/voltcache.jar > $OPENSHIFT_VOLTDB_DIR/logs/startup.log &
         fi
-
 
 }
 
 
 function stop() {
 
+	getinternalip
+
 	client_result "stopping voltdb...."
     client_result "voltdb is running ...issuing stop ";
-                export HOME=${HOME}/app-root/data
-    voltadmin pause -H $OPENSHIFT_DIY_IP;
-    voltadmin shutdown -H $OPENSHIFT_DIY_IP;
+	export HOME=${HOME}/app-root/data
+    voltadmin pause -H $internaladdressip;
+    voltadmin shutdown -H $internaladdressip;
 
    	return 1
 
