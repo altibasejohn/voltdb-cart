@@ -12,5 +12,9 @@ echo ${OPENSHIFT_VOLTDB_DIR}jre-install/bin:${OPENSHIFT_VOLTDB_DIR}voltdb-instal
 
 mkdir ${OPENSHIFT_VOLTDB_DIR}logs
 
+cp ~/voltdb/sample/voltcache.jar $OPENSHIFT_DATA_DIR/currentschema.jar
+cp ~/voltdb/sample/deployment.xml $OPENSHIFT_DATA_DIR/currentdeployment.xml
+
+
 client_result "setup completed"
 

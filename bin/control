@@ -70,7 +70,7 @@ function start() {
 			getinternalip
 			client_result "voltdb is not running...starting it now"
             export HOME=${HOME}/app-root/data
-            nohup voltdb create --internal 16700 --externalinterface $internaladdressip --zookeeper 16300 --httphost $internaladdressip -d $OPENSHIFT_VOLTDB_DIR/sample/currentdeployment.xml  --zkhost $internaladdressip -H $internaladdressip --internalinterface $internaladdressip $OPENSHIFT_VOLTDB_DIR/sample/currentschema.jar > $OPENSHIFT_VOLTDB_DIR/logs/startup.log &
+            nohup voltdb create --internal 16700 --externalinterface $internaladdressip --zookeeper 16300 --httphost $internaladdressip -d $OPENSHIFT_DATA_DIR/currentdeployment.xml  --zkhost $internaladdressip -H $internaladdressip --internalinterface $internaladdressip $OPENSHIFT_DATA_DIR/currentschema.jar > $OPENSHIFT_VOLTDB_DIR/logs/startup.log &
         fi
 
 }
